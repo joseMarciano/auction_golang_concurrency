@@ -10,6 +10,12 @@ type UserUseCase struct {
 	UserRepository user_entity.UserRepositoryInterface
 }
 
+func NewUserUseCase(userRepository user_entity.UserRepositoryInterface) UserUseCaseInterface {
+	return UserUseCase{
+		UserRepository: userRepository,
+	}
+}
+
 type UserOutputDTO struct {
 	Id   string `json:"id"`
 	Name string `json:"name"`
